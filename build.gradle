@@ -3,12 +3,19 @@ apply from: "yc.gradle"
 buildscript {
     apply from: "yc.gradle"
     repositories {
+        //阿里云国内镜像 https://help.aliyun.com/document_detail/102512.html
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        //github代理镜像
+        maven {url "https://jitpack.io"}
+        //国外镜像
         google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.4.3'
         //jitpack
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
@@ -16,9 +23,16 @@ buildscript {
 
 allprojects {
     repositories {
+        //阿里云国内镜像 https://help.aliyun.com/document_detail/102512.html
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        //github代理镜像
+        maven {url "https://jitpack.io"}
+        //国外镜像
         google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
+        mavenCentral()
     }
 }
 
